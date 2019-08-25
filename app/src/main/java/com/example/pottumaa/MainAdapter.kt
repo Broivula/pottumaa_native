@@ -61,7 +61,7 @@ class GalleryAdapter (val data : ImageData) : RecyclerView.Adapter<CustomViewHol
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         // just for a single image
         val galleryImageView = holder.view.imageViewImage_gallery
-        val imageUrl = "http://13.ip-51-75-16.eu:2222/get/potatoImages/"+data.date + "!" + data.images.get(position)
+        val imageUrl = data.date + "!" + data.images.get(position)
         println(imageUrl)
         Picasso.with(holder.view.context).load(imageUrl).placeholder(R.drawable.ic_image_white_24dp).into(galleryImageView)
 
