@@ -19,6 +19,8 @@ class ImageGalleryActivity : AppCompatActivity() {
 
 
         recyclerView_gallery.layoutManager = LinearLayoutManager(this)
+        recyclerView_gallery.setHasFixedSize(true)
+        recyclerView_gallery.setItemViewCacheSize(24)
         recyclerView_gallery.adapter = GalleryAdapter(DataManager.imageData!!.get(position))
     }
 

@@ -23,14 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         DataManager.fetchJSONData(this, this)
 
-        //recyclerView_main.setBackgroundColor(Color.LTGRAY)
-        //DataManager.run("http://13.ip-51-75-16.eu:2222/get/potatoImages")
-
         recyclerView_main.layoutManager = LinearLayoutManager(this)
-
-        val dateButton = findViewById<Button>(R.id.date_button)
-
-        //   recyclerView_main.adapter = MainAdapter()
+        println("main starts")
     }
 
 
