@@ -1,18 +1,12 @@
 package com.example.pottumaa
 
 import android.content.Context
-import android.graphics.Camera
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
-import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
-import java.lang.reflect.Type
 
 object DataManager {
     var imageData : List<ImageData>? = null
-    var imageUrl = "http://13.ip-51-75-16.eu:2222/get/potatoImages";
     private val client = OkHttpClient()
 
     // This function gets the data from the server, sorts it, then passes the turn for the main thread to update the UI
@@ -21,7 +15,7 @@ object DataManager {
     fun fetchJSONData(activity : MainActivity, context : Context) {
 
         val request = Request.Builder()
-            .url(imageUrl)
+            .url(URL)
             .build()
 
         client.newCall(request).enqueue(object : Callback {
